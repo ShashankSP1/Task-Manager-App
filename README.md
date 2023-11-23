@@ -4,8 +4,8 @@ This is a Task Manager App that allows users to organize and manage their tasks.
 and MySQL for database connection.
 
 Features:
-Task Creation and Management: Users can create, edit, update and delete tasks.
-Database Integration: MySQL is used for storing and retrieving task data.
+1)Task Creation and Management: Users can create, edit, update and delete tasks.
+2)Database Integration: MySQL is used for storing and retrieving task data.
 
 Technologies Used:
 
