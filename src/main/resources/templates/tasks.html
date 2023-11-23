@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Tasks</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+
+    <style>
+        #button1{
+            background-color: forestgreen;
+            color: #f2f2f2;
+        }
+        #button2{
+            background-color: red;
+            color: #f2f2f2;
+        }
+        #font{
+            color: #f2f2f2;
+        }
+        #a:hover{
+            color: yellow;
+        }
+        #div1{
+            background-color:deeppink;
+        }
+        #button1:hover {
+            color: yellow;
+        }
+        #button2:hover{
+            color: yellow;
+        }
+        #tr:hover{
+            background-color: wheat;
+        }
+        b{
+            background-color: red;
+        }
+        h2{
+            color: black;
+        }
+        thead{
+            background-color: black;
+            color: white;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div class="container-fluid text-center" >
+    <div id="div1">
+
+        <div >
+            <font face="Times New Roman"><h2>Task Management App</h2></font>
+        </div>
+
+        <div class="m-2">
+            <font face="Times New Roman" id="font"><a class="h3" th:href="@{/tasks/new}" id="a">Add New Task</a></font>
+        </div>
+
+        <div th:if="${message}" class="alert alert-success text-center">
+            [[${message}]]
+        </div>
+
+    </div>
+
+    <div>
+        <marquee><font face="Times New Roman"><b style="background-color: orangered; color: white"><caption>List of Tasks</caption></b></font></marquee>
+        <table border="solid black">
+            <thead class="ml-2">
+            <tr>
+                <th>Task Number</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Edit / Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <th:block th:each="task : ${listTasks}">
+                <tr id="tr">
+                    <td>[[${task.id}]]</td>
+                    <td>[[${task.title}]]</td>
+                    <td>[[${task.description}]]</td>
+                    <td>[[${task.status}]]</td>
+                    <td>
+
+                        <button class="btn h4 mr-3" th:onclick="'window.location.href = \'/tasks/edit/\' + ' + ${task.id}" id="button1">Edit</button>
+                        <button class=" btn h4" th:onclick="'window.location.href = \'/tasks/delete/\' + ' + ${task.id}" id="button2">Delete</button>
+
+                    </td>
+                </tr>
+            </th:block>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

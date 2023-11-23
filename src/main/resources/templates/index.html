@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Web Application</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <style>
+        body {
+            background-image: url('https://assets-global.website-files.com/62fcfcf2e1a4c21ed18b80e6/64b01cf98977d7b9ef43c849_iewijd111s.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #font1{
+            color: white;
+        }
+        #font1:hover{
+            color: deepskyblue;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Align at the bottom */
+            align-items: flex-start;
+            height: 100vh;
+            margin-top: 1px;
+            margin-left: 50px;
+            /* Adjust spacing from the bottom */
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="container">
+    <font face="Times New Roman" class=" btn btn-success ml-5"><h2><a href="/tasks" id="font1">Manage Tasks</a></h2></font>
+    <p></p>
+</div>
+</body>
+
+</html>
